@@ -1,14 +1,24 @@
 import datetime
 import requests
 import vk_api
+
 from bs4 import BeautifulSoup
 from random import randint
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from vk_api.longpoll import VkLongPoll, VkEventType
+
 vk_session = vk_api.VkApi(token='3ae03ce89d13effca33ecac09e6919dd03eb1b4dc4b55fe33075c16ae6ad90f4b58fcb724b2b6fc07826b')
 longpoll = VkLongPoll(vk_session)
 
 STATE = 'idle'
+
+# import gspread
+# from oauth2client.service_account import ServiceAccountCredentials
+# scope = ['https://spreadsheets.google.com/feeds',
+#          'https://www.googleapis.com/auth/drive']
+# creds = ServiceAccountCredentials.from_json_keyfile_name('Secret.json',
+#                                                          scope)
+# client = gspread.authorize(creds)
 
 user_old = dict()
 def send(mess):
